@@ -29,7 +29,7 @@ export default function AppBar() {
           )}
         </button>
         <a
-          href="https://github.com"
+          href="https://github.com/mplatinum/ciphersuite"
           target="_blank"
           rel="noopener noreferrer"
           className="btn"

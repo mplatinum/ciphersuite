@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color: #1f2937;
+  background-color: #ffffff;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+@layer components {
+  .card {
+    @apply bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700;
+  }
+
+  .card-hover {
+    @apply hover:shadow-md hover:border-primary-300 dark:hover:border-primary-700;
+    transition: box-shadow 200ms, border-color 200ms;
+  }
+
+  .btn {
+    @apply transition-all duration-200 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg p-2;
+  }
+}

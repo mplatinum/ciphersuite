@@ -19,7 +19,6 @@ export default {
           800: '#075985',
           900: '#0c4a6e',
         },
-        'light-red': '#FF7F7F'
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', 'Avenir', 'Helvetica', 'Arial', 'sans-serif'],

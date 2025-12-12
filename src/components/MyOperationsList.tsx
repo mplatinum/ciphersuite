@@ -37,7 +37,7 @@ export default memo(function MyOperationsList() {
           <div className="flex gap-1 w-16 justify-end">
             <button
               onClick={handleLoad}
-              className="p-1.5 text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 rounded"
+              className="px-1.5 text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 rounded"
               title="Load chain"
               aria-label="Load chain from file"
             >
@@ -47,7 +47,7 @@ export default memo(function MyOperationsList() {
             </button>
             <button
               onClick={handleSave}
-              className="p-1.5 text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 rounded"
+              className="px-1.5 text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 rounded"
               title="Save chain"
               aria-label="Save chain to file"
             >

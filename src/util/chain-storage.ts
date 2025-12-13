@@ -26,7 +26,7 @@ export function serializeChain(mode: CipherMode, operations: Operation[]): strin
 }
 
 export function deserializeChain(json: string): { mode: CipherMode; operations: Operation[] } {
-  const chain: SerializedChain = JSON.parse(json);
+  const chain = JSON.parse(json) as SerializedChain;
 
   if (chain.version !== 1) {
     throw new Error('Unsupported chain file version');

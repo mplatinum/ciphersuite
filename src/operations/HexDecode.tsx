@@ -11,7 +11,7 @@ export default {
   render: (index: number) => <HexOptions index={index} />,
   options: 'ascii' as HexOptionsType,
   fn(input: string) {
-    const mode = this.options as HexOptionsType;
+    const mode = this.options;
     let points;
     if (mode === 'ascii') {
       points = input.match(/.{1,2}/g);

@@ -9,7 +9,7 @@ export default {
   fn(input: string) {
     try {
       return atob(input);
-    } catch (e) {
+    } catch {
       throw new OutputError('Invalid Base64 input');
     }
   },

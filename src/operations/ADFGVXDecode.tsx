@@ -19,7 +19,7 @@ export default {
   fn(input: string) {
     const charMap = generateCharmapADFGVXFrom(this.options.square);
 
-    const { key: optKey } = this.options as ADFGVXOptionsType;
+    const { key: optKey } = this.options;
 
     if (input === '') {
       return '';
@@ -41,7 +41,7 @@ export default {
       .map((c, i) => ({ c, i }))
       .sort((a, b) => (a.c > b.c ? 1 : -1));
 
-    const cols = Array(key.length);
+    const cols: string[] = [];
 
     const bColLen = Math.floor(upper.length / key.length);
     const nLongCols = upper.length % key.length;
@@ -59,7 +59,7 @@ export default {
     const encodedChars: string[] = [];
     for (let j = 0; j < bColLen + 1; j++) {
       for (let i = 0; i < key.length; i++) {
-        if (cols[i][j] !== undefined) {
+        if (cols[i] && cols[i][j] !== undefined) {
           encodedChars.push(cols[i][j]);
         }
       }

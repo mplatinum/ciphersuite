@@ -14,7 +14,7 @@ export default {
     offset: 0,
   } as RailFenceOptionsType,
   fn(input: string) {
-    const { rails, offset } = this.options as RailFenceOptionsType;
+    const { rails, offset } = this.options;
 
     if (rails < 2) {
       throw new OutputError('Rail Fence rails should be >= 2');

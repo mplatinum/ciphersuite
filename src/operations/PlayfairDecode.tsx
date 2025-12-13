@@ -55,7 +55,7 @@ export default {
     key: 'PLAYFAIR',
   } as PlayfairOptionsType,
   fn(input: string) {
-    const { key } = this.options as PlayfairOptionsType;
+    const { key } = this.options;
     const grid = generatePlayfairGrid(key);
 
     const cleaned = input.toUpperCase().replace(/[^A-Z]/g, '');

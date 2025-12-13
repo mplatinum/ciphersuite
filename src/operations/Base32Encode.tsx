@@ -14,7 +14,7 @@ export default {
     const encoder = new TextEncoder();
     return base32Encode(
       encoder.encode(input),
-      this.options! as Base32OptionsType
+      this.options
     );
   },
 };

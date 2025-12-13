@@ -19,7 +19,7 @@ export default {
           return String.fromCharCode(charCode);
         })
         .join('');
-    } catch (e) {
+    } catch {
       throw new OutputError('Invalid binary format. Expected space-separated binary values (e.g., "01001000 01101001")');
     }
   },

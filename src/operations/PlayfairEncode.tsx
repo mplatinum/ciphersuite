@@ -55,7 +55,7 @@ export default {
     key: 'PLAYFAIR',
   } as PlayfairOptionsType,
   fn(input: string) {
-    const { key } = this.options as PlayfairOptionsType;
+    const { key } = this.options;
     const grid = generatePlayfairGrid(key);
 
     // Prepare input: uppercase, replace J with I, remove non-alphabetic
@@ -68,8 +68,8 @@ export default {
     // Create digraphs
     const digraphs: string[] = [];
     for (let i = 0; i < cleaned.length; i += 2) {
-      let first = cleaned[i];
-      let second = i + 1 < cleaned.length ? cleaned[i + 1] : 'X';
+      const first = cleaned[i];
+      const second = i + 1 < cleaned.length ? cleaned[i + 1] : 'X';
 
       // If both letters are the same, insert X
       if (first === second) {

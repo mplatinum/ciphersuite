@@ -15,7 +15,7 @@ export default {
     ignoreCase: true,
   } as SubstitutionOptionsType,
   fn(input: string) {
-    const { from, to, ignoreCase } = this.options as SubstitutionOptionsType;
+    const { from, to, ignoreCase } = this.options;
 
     if (from.length !== to.length) {
       throw new OutputError(

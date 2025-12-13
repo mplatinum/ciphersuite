@@ -10,7 +10,7 @@ export default {
   render: (index: number) => <HexOptions index={index} />,
   options: 'ascii' as HexOptionsType,
   fn(input: string) {
-    const mode = this.options as HexOptionsType;
+    const mode = this.options;
     const padLength = mode === 'unicode' ? 4 : 2;
     return Array.from(input, (c) =>
       c.charCodeAt(0).toString(16).padStart(padLength, '0')

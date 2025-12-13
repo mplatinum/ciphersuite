@@ -13,7 +13,7 @@ export default {
     key: 'ZEBRAS',
   } as ColumnarTranspositionOptionsType,
   fn(input: string) {
-    const { key } = this.options as ColumnarTranspositionOptionsType;
+    const { key } = this.options;
 
     if (input.length === 0) {
       return '';

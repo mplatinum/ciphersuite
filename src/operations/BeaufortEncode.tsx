@@ -13,7 +13,7 @@ export default {
     key: 'FORTIFICATION',
   } as BeaufortOptionsType,
   fn(input: string) {
-    const { key } = this.options as BeaufortOptionsType;
+    const { key } = this.options;
 
     if (key.length === 0) {
       throw new OutputError('Beaufort key must be set');

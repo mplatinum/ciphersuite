@@ -12,7 +12,7 @@ export default {
     shift: 3,
   } as CaesarOptionsType,
   fn(input: string) {
-    const { shift } = this.options as CaesarOptionsType;
+    const { shift } = this.options;
     return input
       .split('')
       .map((c) => {

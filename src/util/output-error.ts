@@ -1,5 +1,6 @@
 export default class OutputError extends Error {
-  constructor(...args: any[]) {
-    super(...args);
+  constructor(message?: string) {
+    super(message);
+    this.name = 'OutputError';
   }
 }

@@ -14,8 +14,7 @@ export default {
     rotateNumbers: true,
   } as ROT13OptionsType,
   fn(input: string) {
-    const { offset, keepNonAlphanumeric, rotateNumbers } = this
-      .options as ROT13OptionsType;
+    const { offset, keepNonAlphanumeric, rotateNumbers } = this.options;
 
     let inputClean = input.split('');
     if (!keepNonAlphanumeric) {

@@ -52,8 +52,8 @@ describe('Rail Fence Cipher Encode/Decode', () => {
       RailFenceDecode.options = { rails: 4, offset: 0 };
 
       const plaintext = 'DEFENDTHEEASTWALLOFTHECASTLE';
-      const ciphertext = RailFenceEncode.fn(plaintext);
-      const decoded = RailFenceDecode.fn(ciphertext);
+      const ciphertext: string = RailFenceEncode.fn(plaintext);
+      const decoded: string = RailFenceDecode.fn(ciphertext);
       expect(decoded).toBe(plaintext);
     });
 
@@ -70,8 +70,8 @@ describe('Rail Fence Cipher Encode/Decode', () => {
       RailFenceDecode.options = { rails: 3, offset: 1 };
 
       const plaintext = 'HELLOWORLD';
-      const ciphertext = RailFenceEncode.fn(plaintext);
-      const decoded = RailFenceDecode.fn(ciphertext);
+      const ciphertext: string = RailFenceEncode.fn(plaintext);
+      const decoded: string = RailFenceDecode.fn(ciphertext);
       expect(decoded).toBe(plaintext);
     });
 
@@ -80,8 +80,8 @@ describe('Rail Fence Cipher Encode/Decode', () => {
       RailFenceDecode.options = { rails: 3, offset: 2 };
 
       const plaintext = 'TESTING';
-      const ciphertext = RailFenceEncode.fn(plaintext);
-      const decoded = RailFenceDecode.fn(ciphertext);
+      const ciphertext: string = RailFenceEncode.fn(plaintext);
+      const decoded: string = RailFenceDecode.fn(ciphertext);
       expect(decoded).toBe(plaintext);
     });
 
@@ -100,8 +100,8 @@ describe('Rail Fence Cipher Encode/Decode', () => {
 
         const inputs = ['HELLOWORLD', 'CRYPTOGRAPHY', 'TESTMESSAGE'];
         inputs.forEach((input) => {
-          const encoded = RailFenceEncode.fn(input);
-          const decoded = RailFenceDecode.fn(encoded);
+          const encoded: string = RailFenceEncode.fn(input);
+          const decoded: string = RailFenceDecode.fn(encoded);
           expect(decoded).toBe(input);
         });
       });
@@ -118,8 +118,8 @@ describe('Rail Fence Cipher Encode/Decode', () => {
 
       const inputs = ['HELLO', 'ABC', 'ABCDEF'];
       inputs.forEach((input) => {
-        const encoded = RailFenceEncode.fn(input);
-        const decoded = RailFenceDecode.fn(encoded);
+        const encoded: string = RailFenceEncode.fn(input);
+        const decoded: string = RailFenceDecode.fn(encoded);
         expect(decoded).toBe(input);
       });
     });
@@ -129,8 +129,8 @@ describe('Rail Fence Cipher Encode/Decode', () => {
       RailFenceDecode.options = { rails: 2, offset: 0 };
 
       const input = 'Hello, World!';
-      const encoded = RailFenceEncode.fn(input);
-      const decoded = RailFenceDecode.fn(encoded);
+      const encoded: string = RailFenceEncode.fn(input);
+      const decoded: string = RailFenceDecode.fn(encoded);
       expect(decoded).toBe(input);
     });
 
@@ -139,8 +139,8 @@ describe('Rail Fence Cipher Encode/Decode', () => {
       RailFenceDecode.options = { rails: 3, offset: 0 };
 
       const input = 'Test 123 Message';
-      const encoded = RailFenceEncode.fn(input);
-      const decoded = RailFenceDecode.fn(encoded);
+      const encoded: string = RailFenceEncode.fn(input);
+      const decoded: string = RailFenceDecode.fn(encoded);
       expect(decoded).toBe(input);
     });
   });

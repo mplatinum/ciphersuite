@@ -18,7 +18,7 @@ export default {
   fn(input: string) {
     const charMap = generateCharmapADFGVXTo(this.options.square);
 
-    const { key: optKey } = this.options as ADFGVXOptionsType;
+    const { key: optKey } = this.options;
 
     if (optKey.length === 0) {
       throw new OutputError('Please set an ADFGVX key');
@@ -33,11 +33,11 @@ export default {
     const nCols = optKey.length;
     const nRows = Math.ceil(encoded.length / nCols);
 
-    const cols = Array(nCols);
+    const cols: Array<{ k: string; v: string[] }> = [];
     for (let x = 0; x < nCols; x++) {
       cols[x] = {
         k: optKey[x],
-        v: Array(nRows),
+        v: [],
       };
       for (let y = 0; y < nRows; y++) {
         const k = y * nCols + x;

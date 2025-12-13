@@ -26,14 +26,14 @@ export default {
       .join('');
 
     const half = s1.length / 2;
-    const arr = Array(s1.length);
+    const arr: string[] = [];
     for (let i = 0; i < s1.length; i += 2) {
       const k = i / 2;
       arr[k] = s1[i];
       arr[half + k] = s1[i + 1];
     }
 
-    const out = Array(half);
+    const out: string[] = [];
     for (let i = 0; i < arr.length; i += 2) {
       const c = charMap2.get(arr[i] + arr[i + 1])!;
       out[i / 2] = c;

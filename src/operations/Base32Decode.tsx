@@ -15,9 +15,9 @@ export default {
     try {
       const decoder = new TextDecoder();
       return decoder.decode(
-        base32Decode(input, this.options! as Base32OptionsType)
+        base32Decode(input, this.options)
       );
-    } catch (e) {
+    } catch {
       throw new OutputError('Invalid Base32 input');
     }
   },

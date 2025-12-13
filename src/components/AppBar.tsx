@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { ThemeContext } from './ThemeProvider';
+import { ThemeContext } from '../contexts/ThemeContext';
 
 export default function AppBar() {
   const { theme, setTheme } = useContext(ThemeContext);

@@ -9,7 +9,7 @@ export default {
   fn(input: string) {
     try {
       return btoa(input);
-    } catch (e) {
+    } catch {
       throw new OutputError('Invalid input for Base64 encoding (only Latin1 characters supported)');
     }
   },

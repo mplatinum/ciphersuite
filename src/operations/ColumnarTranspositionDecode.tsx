@@ -13,7 +13,7 @@ export default {
     key: 'ZEBRAS',
   } as ColumnarTranspositionOptionsType,
   fn(input: string) {
-    const { key } = this.options as ColumnarTranspositionOptionsType;
+    const { key } = this.options;
 
     if (input.length === 0) {
       return '';
@@ -32,9 +32,14 @@ export default {
     const numRows = Math.ceil(input.length / numCols);
 
     // Create empty grid
-    const grid: string[][] = Array(numRows)
-      .fill(null)
-      .map(() => Array(numCols).fill(''));
+    const grid: string[][] = [];
+    for (let i = 0; i < numRows; i++) {
+      const row: string[] = [];
+      for (let j = 0; j < numCols; j++) {
+        row.push('');
+      }
+      grid.push(row);
+    }
 
     // Fill columns in key order
     let pos = 0;

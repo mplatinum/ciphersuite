@@ -1,6 +1,5 @@
 import { nanoid } from 'nanoid';
 import AffineOptions from '../components/options/AffineOptions';
-import { AffineOptionsType } from '../util/store';
 import { gcd, mod, modInv } from '../util/math';
 import OutputError from '../util/output-error';
 
@@ -15,7 +14,7 @@ export default {
     b: 0,
   },
   fn(input: string) {
-    const { a, b } = this.options as AffineOptionsType;
+    const { a, b } = this.options;
     const alphabet = 'abcdefghijklmnopqrstuvwxyz';
     const aModInv = modInv(a, 26);
 

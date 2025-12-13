@@ -1,25 +1,15 @@
-import { createContext, useEffect, useState } from 'react';
-
-export const ThemeContext = createContext({
-  theme: 'dark',
-  setTheme: (_: string) => { },
-});
+import { useEffect, useState } from 'react';
+import { ThemeContext } from '../contexts/ThemeContext';
 
 export default function ThemeProvider({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  const [theme, setTheme] = useState('dark');
-
-  useEffect(() => {
+  const [theme, setTheme] = useState(() => {
     const storedTheme = localStorage.getItem('theme');
-    if (storedTheme && storedTheme !== 'dark') {
-      setTheme(storedTheme);
-    } else {
-      localStorage.setItem('theme', 'dark');
-    }
-  }, []);
+    return storedTheme || 'dark';
+  });
 
   useEffect(() => {
     if (theme !== '') {

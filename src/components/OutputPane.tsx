@@ -32,7 +32,7 @@ export default function OutputPane() {
       return;
     }
     setOutput(outputRaw);
-  }, [input, operations]);
+  }, [input, operations, setOutput]);
 
   const handleCopy = async () => {
     try {
@@ -55,7 +55,7 @@ export default function OutputPane() {
         className="min-h-[250px] md:min-h-0 h-full resize-none p-4 focus-visible:outline-none bg-white dark:bg-gray-800 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500 focus:ring-2 focus:ring-primary-500 dark:focus:ring-primary-600 focus:ring-inset transition-shadow"
       ></textarea>
       <button
-        onClick={handleCopy}
+        onClick={() => void handleCopy()}
         disabled={!output}
         className="absolute bottom-3 right-3 p-2 btn text-gray-700 dark:text-gray-300 disabled:opacity-40 disabled:cursor-not-allowed"
         aria-label="Copy to clipboard"

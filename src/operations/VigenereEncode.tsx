@@ -13,7 +13,7 @@ export default {
     key: '',
   } as VigenereOptionsType,
   fn(input: string) {
-    const { key } = this.options as VigenereOptionsType;
+    const { key } = this.options;
 
     if (key.length === 0) {
       throw new OutputError('Vigenère key must be set');

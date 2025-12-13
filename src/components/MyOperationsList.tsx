@@ -36,7 +36,7 @@ export default memo(function MyOperationsList() {
           <span className="font-semibold text-gray-900 dark:text-white">My Operations</span>
           <div className="flex gap-1 w-16 justify-end">
             <button
-              onClick={handleLoad}
+              onClick={() => void handleLoad()}
               className="px-1.5 text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 rounded"
               title="Load chain"
               aria-label="Load chain from file"

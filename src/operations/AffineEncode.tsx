@@ -1,6 +1,5 @@
 import { nanoid } from 'nanoid';
 import AffineOptions from '../components/options/AffineOptions';
-import { AffineOptionsType } from '../util/store';
 import OutputError from '../util/output-error';
 import { gcd } from '../util/math';
 
@@ -15,7 +14,7 @@ export default {
     b: 0,
   },
   fn(input: string) {
-    const { a, b } = this.options as AffineOptionsType;
+    const { a, b } = this.options;
     const alphabet = 'abcdefghijklmnopqrstuvwxyz';
 
     if (a < 0 || b < 0) {

@@ -14,7 +14,7 @@ export default {
     offset: 0,
   } as RailFenceOptionsType,
   fn(input: string) {
-    const { rails, offset } = this.options as RailFenceOptionsType;
+    const { rails, offset } = this.options;
 
     if (rails < 2) {
       throw new OutputError('Rail Fence rails should be >= 2');
@@ -30,8 +30,8 @@ export default {
       throw new OutputError('Rail Fence offset is invalid');
     }
 
-    const rows = Array(rails);
-    for (let i = 0; i < rows.length; i++) {
+    const rows: string[][] = [];
+    for (let i = 0; i < rails; i++) {
       rows[i] = [];
     }
 

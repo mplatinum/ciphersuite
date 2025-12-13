@@ -19,7 +19,7 @@ export default {
   fn(input: string) {
     const charMap = generateCharmapPolybiusSquareFrom(this.options.square);
 
-    const { spaces } = this.options as PolybiusSquareOptionsType;
+    const { spaces } = this.options;
 
     if (spaces) {
       return input

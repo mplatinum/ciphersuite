@@ -13,7 +13,7 @@ type SerializedChain = {
   operations: SerializedOperation[];
 };
 
-export function serializeChain(mode: CipherMode, operations: Operation[]): string {
+function serializeChain(mode: CipherMode, operations: Operation[]): string {
   const chain: SerializedChain = {
     version: 1,
     mode,
@@ -25,7 +25,7 @@ export function serializeChain(mode: CipherMode, operations: Operation[]): strin
   return JSON.stringify(chain, null, 2);
 }
 
-export function deserializeChain(json: string): { mode: CipherMode; operations: Operation[] } {
+function deserializeChain(json: string): { mode: CipherMode; operations: Operation[] } {
   const chain = JSON.parse(json) as SerializedChain;
 
   if (chain.version !== 1) {

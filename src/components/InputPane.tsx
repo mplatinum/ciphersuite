@@ -9,15 +9,15 @@ export default memo(function InputPane() {
   );
 
   return (
-    <div className="flex flex-col h-1/2 border-b border-gray-200 dark:border-gray-700">
-      <div className="bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700 py-3 px-4">
-        <div className="text-center font-semibold text-gray-900 dark:text-white">Input</div>
+    <div className="flex flex-col h-1/2 border-b border-neutral-200 dark:border-neutral-800">
+      <div className="section-header">
+        <span className="section-title">Input</span>
       </div>
       <textarea
         placeholder="Type your secret text here..."
         value={input}
         onChange={(evt) => setInput(evt.target.value)}
-        className="min-h-[250px] md:min-h-0 h-full resize-none p-4 focus-visible:outline-none bg-white dark:bg-gray-800 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500 focus:ring-2 focus:ring-primary-500 dark:focus:ring-primary-600 focus:ring-inset transition-shadow"
+        className="min-h-[250px] md:min-h-0 h-full resize-none p-5 focus-visible:outline-none bg-neutral-50 dark:bg-neutral-900 text-neutral-900 dark:text-neutral-100 placeholder-neutral-400 dark:placeholder-neutral-600 focus:bg-neutral-100 dark:focus:bg-neutral-850 transition-colors duration-200 font-mono text-sm leading-relaxed"
       ></textarea>
     </div>
   );

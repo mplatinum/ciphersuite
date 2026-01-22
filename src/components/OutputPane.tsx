@@ -46,23 +46,26 @@ export default function OutputPane() {
 
   return (
     <div className="flex grow h-1/2 flex-col relative">
-      <div className="bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700 py-3 px-4">
-        <div className="text-center font-semibold text-gray-900 dark:text-white">Output</div>
+      <div className="section-header">
+        <span className="section-title">Output</span>
       </div>
       <textarea
         readOnly
         value={output}
-        className="min-h-[250px] md:min-h-0 h-full resize-none p-4 focus-visible:outline-none bg-white dark:bg-gray-800 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500 focus:ring-2 focus:ring-primary-500 dark:focus:ring-primary-600 focus:ring-inset transition-shadow"
+        className="min-h-[250px] md:min-h-0 h-full resize-none p-5 focus-visible:outline-none bg-neutral-50 dark:bg-neutral-900 text-neutral-900 dark:text-neutral-100 placeholder-neutral-400 dark:placeholder-neutral-600 cursor-default font-mono text-sm leading-relaxed"
       ></textarea>
       <button
         onClick={() => void handleCopy()}
         disabled={!output}
-        className="absolute bottom-3 right-3 p-2 btn text-gray-700 dark:text-gray-300 disabled:opacity-40 disabled:cursor-not-allowed"
+        className={`absolute bottom-4 right-4 p-2.5 rounded-full transition-all duration-200 ${copied 
+          ? 'bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400' 
+          : 'bg-neutral-200 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-300 hover:bg-neutral-300 dark:hover:bg-neutral-700 hover:text-neutral-800 dark:hover:text-neutral-100'
+        } disabled:opacity-40 disabled:cursor-not-allowed elevation-1`}
         aria-label="Copy to clipboard"
         title={copied ? "Copied!" : "Copy to clipboard"}
       >
         {copied ? (
-          <svg className="w-5 h-5 text-green-600 dark:text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
           </svg>
         ) : (

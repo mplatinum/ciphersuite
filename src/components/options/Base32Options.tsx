@@ -13,10 +13,10 @@ export default memo(function Base32Options({ index }: { index: number }) {
 
   return (
     <div>
-      <label className="flex items-center gap-2 text-sm">
-        <span className="text-gray-700 dark:text-gray-300 font-medium">Variant:</span>
+      <label className="flex items-center gap-3 text-sm">
+        <span className="text-neutral-600 dark:text-neutral-400 font-medium">Variant:</span>
         <select
-          className="flex-1 px-3 py-1.5 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+          className="flex-1 input text-sm"
           value={options}
           onChange={(evt) =>
             setOptions(index, evt.target.value as Base32OptionsType)

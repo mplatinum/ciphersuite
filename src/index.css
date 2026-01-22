@@ -3,12 +3,12 @@
 @tailwind utilities;
 
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'Inter', 'Roboto', system-ui, -apple-system, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
-  color: #1f2937;
-  background-color: #ffffff;
+  color: #e5e5e5;
+  background-color: #0a0a0a;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -17,17 +17,185 @@
   -webkit-text-size-adjust: 100%;
 }
 
+/* Material Design-inspired scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
 @layer components {
+  /* Material Design elevation shadows */
+  .elevation-0 {
+    box-shadow: none;
+  }
+  
+  .elevation-1 {
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  }
+  
+  .elevation-2 {
+    box-shadow: 0 3px 6px rgba(0,0,0,0.15), 0 2px 4px rgba(0,0,0,0.12);
+  }
+  
+  .elevation-3 {
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15), 0 3px 6px rgba(0,0,0,0.10);
+  }
+  
+  .elevation-4 {
+    box-shadow: 0 15px 25px rgba(0,0,0,0.15), 0 5px 10px rgba(0,0,0,0.05);
+  }
+
+  .dark .elevation-1 {
+    box-shadow: 0 1px 3px rgba(0,0,0,0.4), 0 1px 2px rgba(0,0,0,0.3);
+  }
+  
+  .dark .elevation-2 {
+    box-shadow: 0 3px 6px rgba(0,0,0,0.4), 0 2px 4px rgba(0,0,0,0.3);
+  }
+  
+  .dark .elevation-3 {
+    box-shadow: 0 10px 20px rgba(0,0,0,0.4), 0 3px 6px rgba(0,0,0,0.3);
+  }
+
+  /* Card component with Material Design styling */
   .card {
-    @apply bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700;
+    @apply bg-neutral-100 dark:bg-neutral-900 rounded-xl border border-neutral-200 dark:border-neutral-800;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    transition: box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .dark .card {
+    box-shadow: 0 1px 3px rgba(0,0,0,0.6), 0 1px 2px rgba(0,0,0,0.5);
   }
 
   .card-hover {
-    @apply hover:shadow-md hover:border-primary-300 dark:hover:border-primary-700;
-    transition: box-shadow 200ms, border-color 200ms;
+    @apply cursor-pointer;
   }
 
+  .card-hover:hover {
+    box-shadow: 0 3px 6px rgba(0,0,0,0.15), 0 2px 4px rgba(0,0,0,0.12);
+    transform: translateY(-1px);
+  }
+
+  .dark .card-hover:hover {
+    box-shadow: 0 3px 6px rgba(0,0,0,0.4), 0 2px 4px rgba(0,0,0,0.3);
+  }
+
+  /* Material button */
   .btn {
-    @apply transition-all duration-200 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg p-2;
+    @apply transition-all duration-200 rounded-full p-2.5;
+    @apply hover:bg-neutral-200 dark:hover:bg-neutral-800;
+    @apply active:scale-95;
+  }
+
+  .btn-icon {
+    @apply p-2 rounded-full;
+    @apply transition-all duration-150;
+    @apply hover:bg-neutral-200 dark:hover:bg-neutral-800;
+    @apply active:bg-neutral-300 dark:active:bg-neutral-700;
+  }
+
+  .btn-primary {
+    @apply bg-neutral-800 text-white rounded-full px-6 py-2.5 font-medium;
+    @apply hover:bg-neutral-700 active:bg-neutral-600;
+    @apply shadow-md hover:shadow-lg;
+    @apply transition-all duration-200;
+    @apply border border-neutral-700;
+  }
+
+  /* Material input */
+  .input {
+    @apply px-4 py-2.5 rounded-lg;
+    @apply bg-neutral-100 dark:bg-neutral-900;
+    @apply border border-neutral-300 dark:border-neutral-700;
+    @apply text-neutral-900 dark:text-neutral-100;
+    @apply placeholder-neutral-400 dark:placeholder-neutral-600;
+    @apply focus:outline-none focus:ring-2 focus:ring-neutral-500 focus:border-transparent;
+    @apply transition-all duration-200;
+  }
+
+  .input:hover:not(:focus) {
+    @apply border-neutral-400 dark:border-neutral-600;
+  }
+
+  /* Material select */
+  .select {
+    @apply px-4 py-2.5 pr-10 rounded-lg;
+    @apply bg-neutral-100 dark:bg-neutral-900;
+    @apply border border-neutral-300 dark:border-neutral-700;
+    @apply text-neutral-900 dark:text-neutral-100;
+    @apply focus:outline-none focus:ring-2 focus:ring-neutral-500 focus:border-transparent;
+    @apply transition-all duration-200 cursor-pointer;
+    @apply appearance-none;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%23737373' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+    background-position: right 0.5rem center;
+    background-repeat: no-repeat;
+    background-size: 1.5em 1.5em;
+  }
+
+  .dark .select {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%23a3a3a3' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+  }
+
+  .select:hover:not(:focus) {
+    @apply border-neutral-400 dark:border-neutral-600;
+  }
+
+  /* Section header */
+  .section-header {
+    @apply bg-neutral-100 dark:bg-neutral-950 h-14 px-5 shrink-0;
+    @apply border-b border-neutral-200 dark:border-neutral-800;
+    @apply flex items-center justify-center;
+  }
+
+  .section-title {
+    @apply text-sm font-semibold uppercase tracking-wider;
+    @apply text-neutral-600 dark:text-neutral-400;
+    @apply whitespace-nowrap;
+  }
+
+  /* Surface colors */
+  .surface {
+    @apply bg-neutral-100 dark:bg-neutral-950;
+  }
+
+  .surface-1 {
+    @apply bg-neutral-50 dark:bg-neutral-900;
+  }
+
+  .surface-2 {
+    @apply bg-neutral-100 dark:bg-neutral-950;
+  }
+
+  /* Chip/Tag component */
+  .chip {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-sm font-medium;
+    @apply bg-neutral-200 text-neutral-800 dark:bg-neutral-800 dark:text-neutral-200;
+  }
+
+  /* Divider */
+  .divider {
+    @apply border-t border-neutral-200 dark:border-neutral-800;
   }
 }

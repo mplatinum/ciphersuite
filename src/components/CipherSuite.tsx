@@ -50,7 +50,7 @@ export default memo(function CipherSuite() {
   return (
     <div className="h-full flex flex-col grow md:min-h-0">
       <ModeSelector />
-      <div className="h-full grow md:min-h-0 grid grid-cols-1 md:grid-cols-3">
+        <div className="h-full grow md:min-h-0 grid grid-cols-1 md:grid-cols-3 bg-neutral-100 dark:bg-neutral-900 border-t border-neutral-200 dark:border-neutral-800">
         <DragDropContext onDragEnd={onDragEnd}>
           <AvailableOperationsList
             operations={mode === 'encipher' ? encipherOps : decipherOps}

@@ -1,5 +1,7 @@
 # CipherSuite
 
+![Preview](images/preview.png)
+
 An interactive web application for encoding and decoding text using various ciphers and encoding methods. Built with React, TypeScript, and Tailwind CSS, CipherSuite provides an intuitive drag-and-drop interface for chaining multiple cryptographic operations together.
 
 ## Features
